@@ -1,5 +1,7 @@
 body {
   scroll-behavior: smooth;
+  background-color: black;
+  color: antiquewhite;
 }
 
 section {
@@ -9,5 +11,13 @@ section {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 80;
+  align-content: center;
+}
+
+a {
+  font-size: large;
+}
+h2 {
+  text-align: center;
 }

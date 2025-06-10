@@ -1,0 +1,13 @@
+body {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding-top: 60px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

@@ -25,6 +25,7 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-label="toggleNavBar"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +57,7 @@
       <div class="row">
         <div class="col-md-4">
           <img
-            class="rounded-circe img-fluid-rounded shadow"
+            class="rounded-circle img-fluid-rounded shadow"
             src="images/me.jpg"
             alt="My Photo"
             class="img-fluid rounded"
@@ -81,24 +82,56 @@
     </section>
 
     <!-- Previous Work -->
-    <section id="work" class="container py-5 text-center">
+    <section id="work" class="container py-5">
       <h2>Previous Work</h2>
-      <button
-        class="btn btn-secondary mb-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#resumePDF"
+      <p class="d-flex justify-content-center">
+        Here is a brief overview of my background. Click below to view my
+        resume:
+      </p>
+
+      <!-- Toggle Button with ARIA attributes -->
+      <div class="d-flex justify-content-center">
+        <button
+          id="toggleResumeBtn"
+          class="btn btn-secondary mb-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#resumePDF"
+          aria-expanded="false"
+          aria-controls="resumePDF"
+        >
+          Show Resume (PDF)
+        </button>
+      </div>
+
+      <!-- Collapsible PDF container with role and label -->
+      <div
+        class="collapse"
+        id="resumePDF"
+        role="region"
+        aria-labelledby="toggleResumeBtn"
       >
-        Show/Hide Resume
-      </button>
-      <div class="collapse" id="resumePDF">
         <div class="card card-body">
-          <embed
-            src="resume.pdf"
+          <object
+            data="resume.pdf"
             type="application/pdf"
             width="100%"
-            height="600px"
-          />
+            height="600"
+            aria-label="Embedded PDF of my resume"
+            role="document"
+          >
+            <p class="mt-3">
+              <a
+                href="resume.pdf"
+                target="_blank"
+                rel="noopener"
+                aria-label="Resume, PDF file. Opens in new tab."
+              >
+                <div>Resume (PDF)</div>
+                <span class="visually-hidden">, opens in a new tab</span>
+              </a>
+            </p>
+          </object>
         </div>
       </div>
     </section>
@@ -106,9 +139,11 @@
     <!-- Projects -->
     <section id="projects" class="container py-5">
       <h2>Projects</h2>
+      <br />
+      <br />
       <div class="row">
         <div class="col-md-4">
-          <h5>CS250 Assignments</h5>
+          <h3>CS250 Assignments</h3>
           <p>
             These are assignments for a previous Discrete Structures course,
             CS250, at Portland State University. Assignments consisted of
@@ -118,7 +153,7 @@
           </p>
         </div>
         <div class="col-md-4">
-          <h5>CS333 Assignments</h5>
+          <h3>CS333 Assignments</h3>
           <p>
             These are assignments that were completed for a previous Operating
             Systems course, CS333, at Portland State University. Assignments
@@ -129,13 +164,13 @@
           </p>
         </div>
         <div class="col-md-4">
-          <h5>Dynamic Binding</h5>
+          <h3>Dynamic Binding</h3>
           <p>
             This project was an exploration of dynamic binding and various data
             structure implementations that was completed for CS202, a course
             covering object oriented programming principles, at Portland State
             University.
-            <a href="https://github.com/ioctlopus/DynamicBinding">GitHub</a> |
+            <a href="https://github.com/ioctlopus/DynamicBinding">GitHub</a>
           </p>
         </div>
       </div>
@@ -162,7 +197,9 @@
             required
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-primary" value="contactinfo">
+          Send
+        </button>
       </form>
     </section>
 
